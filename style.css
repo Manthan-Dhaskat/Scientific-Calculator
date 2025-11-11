@@ -411,6 +411,16 @@ body.dark .modal-content h2 {
         font-size: 1.6rem;
     }
 
+    .Format {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
+    .theme-btn {
+        position: static;
+    }
+
     .Calculator {
         padding: 12px;
     }
@@ -690,4 +700,5 @@ body.dark .stats-input {
 
 body.dark .stats-result {
     background: rgba(37, 99, 235, 0.1);
+
 }
