@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Scientific Calculator</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <div class="Format">
+        <h1>Scientific Calculator</h1>
+        <button id="themeToggle" class="theme-btn" aria-label="Toggle theme">🌙</button>
+    </div>
+
+    <div class="main-container">
+        <div class="history-panel" id="historyPanel">
+            <div class="history-title">History</div>
+            <div class="history-list" id="historyList"></div>
+            <button id="clearHistory" class="btn">Clear History</button>
+        </div>
+
+        <div class="Calculator">
+            <div class="screen">
+                <div class="previous"></div>
+                <div class="display" id="display">0</div>
+            </div>
+
+            <div class="keys">
+                <!-- Top Row: Modes -->
+                <div class="key-row">
+                    <button class="btn btn-func" id="open-matrix">Matrix</button>
+                    <button class="btn btn-func" id="open-vector">Vector</button>
+                    <button class="btn btn-func" id="open-complex">Complex</button>
+                    <button class="btn btn-func" id="open-stats">Stats</button>
+                </div>
+
+                <!-- Second Row: Controls -->
+                <div class="key-row">
+                    <button class="btn btn-func" id="degRadBtn">DEG</button>
+                    <button class="btn btn-func" id="ansBtn">Ans</button>
+                    <button class="btn btn-clear" data-action="clear">AC</button>
+                    <button class="btn btn-clear" data-action="delete">DEL</button>
+                </div>
+
+                <!-- Third Row: Scientific Functions -->
+                <div class="key-row">
+                    <button class="btn btn-func" data-func="sin">sin</button>
+                    <button class="btn btn-func" data-func="cos">cos</button>
+                    <button class="btn btn-func" data-func="tan">tan</button>
+                    <button class="btn btn-func" data-func="sqrt">√</button>
+                </div>
+
+                <div class="key-row">
+                    <button class="btn btn-func" data-func="log">log</button>
+                    <button class="btn btn-func" data-func="ln">ln</button>
+                    <button class="btn btn-func" data-func="exp">exp</button>
+                    <button class="btn btn-func" data-value="!">!</button>
+                </div>
+
+
+                <div class="key-row">
+                    <button class="btn btn-wide" data-value="(">(</button>
+                    <button class="btn btn-wide" data-value=")">)</button>
+                </div>
+
+
+
+                <!-- Number Pad -->
+                <div class="key-row">
+                    <button class="btn" data-value="7">7</button>
+                    <button class="btn" data-value="8">8</button>
+                    <button class="btn" data-value="9">9</button>
+                    <button class="btn btn-operator" data-value="/">÷</button>
+                </div>
+                <div class="key-row">
+                    <button class="btn" data-value="4">4</button>
+                    <button class="btn" data-value="5">5</button>
+                    <button class="btn" data-value="6">6</button>
+                    <button class="btn btn-operator" data-value="*">×</button>
+                </div>
+                <div class="key-row">
+                    <button class="btn" data-value="1">1</button>
+                    <button class="btn" data-value="2">2</button>
+                    <button class="btn" data-value="3">3</button>
+                    <button class="btn btn-operator" data-value="-">−</button>
+                </div>
+                <div class="key-row">
+                    <button class="btn btn-wide" data-value="0">0</button>
+                    <button class="btn" data-value=".">.</button>
+                    <button class="btn btn-operator" data-value="+">+</button>
+                </div>
+
+                <!-- Bottom Row: Constants and Equals -->
+                <div class="key-row">
+                    <button class="btn" data-value="π">π</button>
+                    <button class="btn" data-value="e">e</button>
+                    <button class="btn btn-equals" data-action="equals">=</button>
+                </div>
+            </div>
+
+            <div id="errorMsg" class="errorMsg" role="status" aria-live="polite"></div>
+
+        </div>
+    </div>
+
+    <!-- Shared modal (used by matrix and other modes). Matrix content is injected dynamically -->
+    <div id="modal" class="modal" role="dialog" aria-modal="true" aria-hidden="true">
+        <div class="modal-content">
+            <button id="modalClose" class="modal-close" aria-label="Close">&times;</button>
+            <h2 id="modalTitle">Feature</h2>
+            <div id="modalBody" class="modal-body">
+                <p id="modalBodyText">This feature is not yet implemented.</p>
+            </div>
+        </div>
+    </div>
+    <div id="modal-overlay" class="modal-overlay"></div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
