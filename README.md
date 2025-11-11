@@ -109,11 +109,10 @@ This web-based calculator is designed to deliver the power of advanced mathemati
 ## 📁 Project Structure
 
 Scientific-Calculator/
-│
-├── index.html # Main calculator interface
-├── style.css # Layout, theming, and responsive styling
-├── script.js # Core logic and modular operations
-└── README.md # Documentation
+├── index.html      # Main interface
+├── style.css       # Layout, theming, and responsive styling
+├── script.js       # Core application logic
+└── README.md       # Documentation
 
 ---
 
